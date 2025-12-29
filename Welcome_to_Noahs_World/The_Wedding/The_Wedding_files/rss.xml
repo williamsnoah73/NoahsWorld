@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:iphoto="urn:iphoto:property" xmlns:iweb="http://www.apple.com/iweb" version="2.0">
+  <channel>
+    <title>Noah’s World</title>
+    <link>http://noahwilliams.me/Welcome_to_Noahs_World/The_Wedding/The_Wedding.html</link>
+    <description>Below are a number of albums intended to share what is without a doubt the best experience and memory of my life to date - my wedding to Mechelle Childs!</description>
+    <item>
+      <title>Wedding</title>
+      <link>http://noahwilliams.me/Welcome_to_Noahs_World/The_Wedding/Pages/Wedding.html</link>
+      <guid isPermaLink="false">282ee9ca-cab8-4336-ab44-08a85233ef08</guid>
+    </item>
+  </channel>
+</rss>
