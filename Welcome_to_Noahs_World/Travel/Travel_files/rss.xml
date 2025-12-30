@@ -2,7 +2,7 @@
 <rss xmlns:iphoto="urn:iphoto:property" xmlns:iweb="http://www.apple.com/iweb" version="2.0">
   <channel>
     <title>Noah’s World</title>
-    <link>http://noahwilliams.me/Welcome_to_Noahs_World/Travel/Travel.html</link>
+    <link>../Travel.html</link>
     <description>The following albums are a way for my family and I to share with all of you our travels!  I hope you enjoy seeing these as much as we enjoyed the trip itself!</description>
     <item>
       <title>Double Musky Express</title>
