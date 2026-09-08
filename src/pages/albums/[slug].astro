@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import ContentBody from '../../components/ContentBody.astro';
 import Gallery from '../../components/Gallery.astro';
 import { resolvePublicImage } from '../../lib/media';
 
@@ -36,6 +37,7 @@ const galleryImages = (album.images ?? []).map((image: any, index: number) => ({
       <span>{album.privacy}</span>
     </div>
     <p class="lede">{album.summary}</p>
+    <ContentBody blocks={album.body} summary={album.summary} />
   </article>
   {galleryImages.length > 0 && <Gallery images={galleryImages} />}
 </BaseLayout>

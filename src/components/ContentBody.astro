@@ -1,0 +1,36 @@
+---
+import { resolveContentLink } from '../lib/content';
+
+interface Props {
+  blocks?: any[];
+  summary?: string;
+}
+
+const { blocks = [], summary } = Astro.props;
+const visibleBlocks = blocks.filter((block) => block.text?.trim() && block.text.trim() !== summary?.trim());
+
+function fragments(block: any) {
+  const parts: any[] = [];
+  let cursor = 0;
+  for (const link of block.links ?? []) {
+    const start = block.text.indexOf(link.text, cursor);
+    const href = resolveContentLink(link);
+    if (start < 0 || !href) continue;
+    if (start > cursor) parts.push({ text: block.text.slice(cursor, start) });
+    parts.push({ text: link.text, href, external: link.kind === 'external' });
+    cursor = start + link.text.length;
+  }
+  if (cursor < block.text.length) parts.push({ text: block.text.slice(cursor) });
+  return parts;
+}
+---
+
+{visibleBlocks.map((block) => block.type === 'caption' ? (
+  <h2>{block.text}</h2>
+) : (
+  <p>
+    {fragments(block).map((part) => part.href ? (
+      <a href={part.href} target={part.external ? '_blank' : undefined} rel={part.external ? 'noopener noreferrer' : undefined}>{part.text}</a>
+    ) : part.text)}
+  </p>
+))}

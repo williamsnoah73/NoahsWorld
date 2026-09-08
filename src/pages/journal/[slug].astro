@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import ContentBody from '../../components/ContentBody.astro';
 import Gallery from '../../components/Gallery.astro';
 import VideoPlayer from '../../components/VideoPlayer.astro';
 import { resolvePublicImage } from '../../lib/media';
@@ -43,12 +44,7 @@ const videos = (story.media ?? [])
       <span>{story.privacy}</span>
     </div>
     <p class="lede">{story.summary}</p>
-    {story.body?.map((block: any) => {
-      if (block.type === 'caption') {
-        return <h2>{block.text}</h2>;
-      }
-      return <p>{block.text}</p>;
-    })}
+    <ContentBody blocks={story.body} summary={story.summary} />
     {videos.map((video: any) => (
       <VideoPlayer
         src={video.sourceUrl}
