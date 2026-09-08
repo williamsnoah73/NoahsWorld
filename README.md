@@ -53,13 +53,18 @@ Public and private source media are physically separated. Never import `private-
 Expected hosting cost is $0/month under Cloudflare's current Free limits for this site's size and update frequency. Verify current limits before launch.
 
 1. Add `noahwilliams.me` to Cloudflare DNS or delegate the zone to Cloudflare.
-2. Create two **Direct Upload** Pages projects:
-   - `noahs-world`
-   - `noahs-world-family`
-3. Add repository secrets:
-   - `CLOUDFLARE_ACCOUNT_ID`
-   - `CLOUDFLARE_API_TOKEN` with only the required Pages edit permission
-4. Set the repository variable `CLOUDFLARE_DEPLOY_ENABLED=true` after the Pages project exists. Until then, pushes validate and build but intentionally skip deployment.
+2. In the Cloudflare dashboard, create an API token with **Account → Cloudflare Pages → Edit** and copy your **Account ID** from the account home page.
+3. Create `.env.cloudflare` in the repository root. The file is git-ignored, so the values never enter version control:
+
+   ```
+   CLOUDFLARE_ACCOUNT_ID=your-account-id
+   CLOUDFLARE_API_TOKEN=your-pages-edit-token
+   ```
+
+4. Run `./scripts/setup_cloudflare.sh`. It verifies the token, creates the `noahs-world` and `noahs-world-family` Direct Upload projects if missing, stores both values as GitHub Actions secrets, and sets the repository variable `CLOUDFLARE_DEPLOY_ENABLED=true`. Secret values are never printed. Delete `.env.cloudflare` afterwards.
+
+   Until `CLOUDFLARE_DEPLOY_ENABLED` is `true`, pushes validate and build but intentionally skip deployment.
+
 5. Push `modernization` to create a branch preview; merges to `main` deploy production.
 6. Attach `noahwilliams.me` to `noahs-world` only after preview approval.
 7. Attach `family.noahwilliams.me` to `noahs-world-family`.
