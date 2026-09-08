@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import StoryCard from '../../components/StoryCard.astro';
+import { resolvePublicImage } from '../../lib/media';
 
 const storyModules = import.meta.glob('../../content/stories/legacy/**/*.json', { eager: true });
 const stories = Object.values(storyModules)
@@ -21,6 +22,7 @@ const stories = Object.values(storyModules)
           summary={story.summary || 'A story from Noah\'s World.'}
           date={story.date}
           section={story.section}
+          image={resolvePublicImage(story.featuredImage)}
         />
       ))}
     </div>

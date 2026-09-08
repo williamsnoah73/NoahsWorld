@@ -12,7 +12,8 @@
     "build:private": "astro build --config astro.private.config.mjs",
     "check": "astro check",
     "validate:content": "python3 scripts/validate_content.py",
-    "test": "npm run validate:content && npm run build",
+    "validate:build": "python3 scripts/check_build.py",
+    "test": "npm run validate:content && npm run build && npm run validate:build",
     "preview": "astro preview",
     "astro": "astro"
   },

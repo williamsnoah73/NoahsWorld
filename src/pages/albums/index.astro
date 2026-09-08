@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import StoryCard from '../../components/StoryCard.astro';
+import { resolvePublicImage } from '../../lib/media';
 
 const albumModules = import.meta.glob('../../content/albums/legacy/**/*.json', { eager: true });
 const albums = Object.values(albumModules)
@@ -21,6 +22,7 @@ const albums = Object.values(albumModules)
           summary={album.summary || 'A photo story from Noah\'s World.'}
           date={album.date}
           section={album.section}
+          image={resolvePublicImage(album.featuredImage)}
         />
       ))}
     </div>

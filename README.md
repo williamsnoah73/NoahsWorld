@@ -59,13 +59,15 @@ Expected hosting cost is $0/month under Cloudflare's current Free limits for thi
 3. Add repository secrets:
    - `CLOUDFLARE_ACCOUNT_ID`
    - `CLOUDFLARE_API_TOKEN` with only the required Pages edit permission
-4. Attach `noahwilliams.me` to `noahs-world`.
-5. Attach `family.noahwilliams.me` to `noahs-world-family`.
-6. Create a Cloudflare Access self-hosted application covering `family.noahwilliams.me/*`. Add only approved family email addresses and enable one-time PIN or an identity provider.
-7. Verify unauthenticated requests to both private HTML pages and direct image URLs are denied.
-8. Optionally redirect `www.noahwilliams.me` to the apex. Do not change `noahwilliams.com` or `noahwilliams.net`.
+4. Set the repository variable `CLOUDFLARE_DEPLOY_ENABLED=true` after the Pages project exists. Until then, pushes validate and build but intentionally skip deployment.
+5. Push `modernization` to create a branch preview; merges to `main` deploy production.
+6. Attach `noahwilliams.me` to `noahs-world` only after preview approval.
+7. Attach `family.noahwilliams.me` to `noahs-world-family`.
+8. Create a Cloudflare Access self-hosted application covering `family.noahwilliams.me/*`. Add only approved family email addresses and enable one-time PIN or an identity provider.
+9. Verify unauthenticated requests to both private HTML pages and direct image URLs are denied.
+10. Optionally redirect `www.noahwilliams.me` to the apex. Do not change `noahwilliams.com` or `noahwilliams.net`.
 
-The public workflow validates pull requests and deploys merges to `main`. The private workflow uses a protected GitHub environment named `private-family-site`; configure required reviewers if desired.
+The public workflow validates pull requests and pushes to `main` or `modernization`; deployment remains gated by `CLOUDFLARE_DEPLOY_ENABLED`. The private workflow uses a protected GitHub environment named `private-family-site`; configure required reviewers if desired.
 
 ## DNS cutover
 

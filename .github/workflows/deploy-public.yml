@@ -3,7 +3,7 @@ name: Validate and deploy public site
 on:
   pull_request:
   push:
-    branches: [main]
+    branches: [main, modernization]
   workflow_dispatch:
 
 permissions:
@@ -28,9 +28,9 @@ jobs:
       - run: npm ci
       - run: npm test
       - name: Deploy public site
-        if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+        if: github.event_name != 'pull_request' && vars.CLOUDFLARE_DEPLOY_ENABLED == 'true'
         uses: cloudflare/wrangler-action@v3
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          command: pages deploy dist --project-name=noahs-world --branch=main
+          command: pages deploy dist --project-name=noahs-world --branch=${{ github.ref_name }}

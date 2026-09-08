@@ -1,5 +1,8 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import Gallery from '../../components/Gallery.astro';
+import VideoPlayer from '../../components/VideoPlayer.astro';
+import { resolvePublicImage } from '../../lib/media';
 
 export function getStaticPaths() {
   const storyModules = import.meta.glob('../../content/stories/legacy/**/*.json', { eager: true });
@@ -17,9 +20,21 @@ const story = storyEntries.find((entry) => entry.slug === slug && entry.privacy 
 if (!story) {
   throw new Error(`Story not found for slug: ${slug}`);
 }
+
+const galleryImages = (story.images ?? []).map((image: any, index: number) => ({
+  src: resolvePublicImage(image.asset),
+  alt: image.caption || `${story.title}, photograph ${index + 1} of ${story.images.length}`,
+  caption: image.caption,
+}));
+const videos = (story.media ?? [])
+  .filter((item: any) => item.type === 'video')
+  .map((item: any) => ({
+    ...item,
+    posterImage: resolvePublicImage(item.poster),
+  }));
 ---
 
-<BaseLayout title={story.title} description={story.summary || 'A story from Noah\'s World.'}>
+<BaseLayout title={story.title} description={story.summary || 'A story from Noah\'s World.'} image={resolvePublicImage(story.featuredImage)?.src}>
   <article class="prose">
     <p class="eyebrow">{story.section}</p>
     <h1>{story.title}</h1>
@@ -34,15 +49,14 @@ if (!story) {
       }
       return <p>{block.text}</p>;
     })}
-    {story.images && story.images.length > 0 && (
-      <div class="gallery">
-        {story.images.map((image: any) => (
-          <figure>
-            <img src="/favicon.svg" alt={image.caption || story.title} />
-            {image.caption && <figcaption>{image.caption}</figcaption>}
-          </figure>
-        ))}
-      </div>
-    )}
+    {videos.map((video: any) => (
+      <VideoPlayer
+        src={video.sourceUrl}
+        poster={video.posterImage}
+        title={video.caption || story.title}
+        caption={video.caption}
+      />
+    ))}
   </article>
+  {galleryImages.length > 0 && <Gallery images={galleryImages} />}
 </BaseLayout>

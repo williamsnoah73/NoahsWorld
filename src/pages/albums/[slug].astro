@@ -1,5 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import Gallery from '../../components/Gallery.astro';
+import { resolvePublicImage } from '../../lib/media';
 
 export function getStaticPaths() {
   const albumModules = import.meta.glob('../../content/albums/legacy/**/*.json', { eager: true });
@@ -17,9 +19,15 @@ const album = albumEntries.find((entry) => entry.slug === slug && entry.privacy 
 if (!album) {
   throw new Error(`Album not found for slug: ${slug}`);
 }
+
+const galleryImages = (album.images ?? []).map((image: any, index: number) => ({
+  src: resolvePublicImage(image.asset),
+  alt: image.caption || `${album.title}, photograph ${index + 1} of ${album.images.length}`,
+  caption: image.caption,
+}));
 ---
 
-<BaseLayout title={album.title} description={album.summary || 'A photo album from Noah\'s World.'}>
+<BaseLayout title={album.title} description={album.summary || 'A photo album from Noah\'s World.'} image={resolvePublicImage(album.featuredImage)?.src}>
   <article class="prose">
     <p class="eyebrow">{album.section}</p>
     <h1>{album.title}</h1>
@@ -28,15 +36,6 @@ if (!album) {
       <span>{album.privacy}</span>
     </div>
     <p class="lede">{album.summary}</p>
-    {album.images && album.images.length > 0 && (
-      <div class="gallery">
-        {album.images.map((image: any) => (
-          <figure>
-            <img src="/favicon.svg" alt={image.caption || album.title} />
-            {image.caption && <figcaption>{image.caption}</figcaption>}
-          </figure>
-        ))}
-      </div>
-    )}
   </article>
+  {galleryImages.length > 0 && <Gallery images={galleryImages} />}
 </BaseLayout>

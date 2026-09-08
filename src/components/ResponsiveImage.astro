@@ -1,5 +1,5 @@
 ---
-import { Image } from 'astro:assets';
+import { Picture } from 'astro:assets';
 
 interface Props {
   src: any;
@@ -13,12 +13,12 @@ const { src, alt, caption, eager = false, class: className } = Astro.props;
 ---
 
 <figure class={className}>
-  <Image
+  <Picture
     src={src}
     alt={alt}
     widths={[480, 800, 1200, 1600]}
     sizes="(max-width: 42rem) 100vw, (max-width: 70rem) 50vw, 33vw"
-    format="avif"
+    formats={['avif', 'webp']}
     loading={eager ? 'eager' : 'lazy'}
     fetchpriority={eager ? 'high' : 'auto'}
     decoding="async"

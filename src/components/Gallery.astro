@@ -1,5 +1,5 @@
 ---
-import { Image } from 'astro:assets';
+import { Picture } from 'astro:assets';
 
 interface GalleryImage {
   src: any;
@@ -15,12 +15,12 @@ const { images } = Astro.props;
   {images.map((image, index) => (
     <figure>
       <button class="gallery-button" type="button" data-gallery-open={index} aria-label={`Enlarge image ${index + 1} of ${images.length}${image.caption ? `: ${image.caption}` : ''}`}>
-        <Image
+        <Picture
           src={image.src}
           alt={image.alt}
           widths={[480, 800, 1200]}
           sizes="(max-width: 42rem) 100vw, (max-width: 70rem) 50vw, 33vw"
-          format="avif"
+          formats={['avif', 'webp']}
           loading={index < 2 ? 'eager' : 'lazy'}
           decoding="async"
         />
