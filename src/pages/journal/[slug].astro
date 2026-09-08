@@ -1,0 +1,48 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+export function getStaticPaths() {
+  const storyModules = import.meta.glob('../../content/stories/legacy/**/*.json', { eager: true });
+  const storyEntries = Object.values(storyModules).map((mod) => (mod as any).default ?? mod);
+  return storyEntries
+    .filter((entry) => entry?.privacy === 'public')
+    .map((entry) => ({ params: { slug: entry.slug } }));
+}
+
+const storyModules = import.meta.glob('../../content/stories/legacy/**/*.json', { eager: true });
+const storyEntries = Object.values(storyModules).map((mod) => (mod as any).default ?? mod);
+const { slug } = Astro.params;
+const story = storyEntries.find((entry) => entry.slug === slug && entry.privacy === 'public');
+
+if (!story) {
+  throw new Error(`Story not found for slug: ${slug}`);
+}
+---
+
+<BaseLayout title={story.title} description={story.summary || 'A story from Noah\'s World.'}>
+  <article class="prose">
+    <p class="eyebrow">{story.section}</p>
+    <h1>{story.title}</h1>
+    <div class="meta">
+      {story.date && <time>{new Date(story.date).toLocaleDateString('en-US', { dateStyle: 'long', timeZone: 'UTC' })}</time>}
+      <span>{story.privacy}</span>
+    </div>
+    <p class="lede">{story.summary}</p>
+    {story.body?.map((block: any) => {
+      if (block.type === 'caption') {
+        return <h2>{block.text}</h2>;
+      }
+      return <p>{block.text}</p>;
+    })}
+    {story.images && story.images.length > 0 && (
+      <div class="gallery">
+        {story.images.map((image: any) => (
+          <figure>
+            <img src="/favicon.svg" alt={image.caption || story.title} />
+            {image.caption && <figcaption>{image.caption}</figcaption>}
+          </figure>
+        ))}
+      </div>
+    )}
+  </article>
+</BaseLayout>

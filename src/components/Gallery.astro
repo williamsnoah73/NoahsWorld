@@ -1,0 +1,84 @@
+---
+import { Image } from 'astro:assets';
+
+interface GalleryImage {
+  src: any;
+  alt: string;
+  caption?: string;
+}
+
+interface Props { images: GalleryImage[]; }
+const { images } = Astro.props;
+---
+
+<div class="gallery" data-gallery>
+  {images.map((image, index) => (
+    <figure>
+      <button class="gallery-button" type="button" data-gallery-open={index} aria-label={`Enlarge image ${index + 1} of ${images.length}${image.caption ? `: ${image.caption}` : ''}`}>
+        <Image
+          src={image.src}
+          alt={image.alt}
+          widths={[480, 800, 1200]}
+          sizes="(max-width: 42rem) 100vw, (max-width: 70rem) 50vw, 33vw"
+          format="avif"
+          loading={index < 2 ? 'eager' : 'lazy'}
+          decoding="async"
+        />
+      </button>
+      {image.caption && <figcaption>{image.caption}</figcaption>}
+    </figure>
+  ))}
+</div>
+
+<dialog class="lightbox" data-lightbox aria-label="Expanded photograph">
+  <button class="lightbox-close" type="button" data-lightbox-close aria-label="Close expanded photograph">Close</button>
+  <button class="lightbox-nav previous" type="button" data-lightbox-previous aria-label="Previous photograph">←</button>
+  <img data-lightbox-image alt="" />
+  <button class="lightbox-nav next" type="button" data-lightbox-next aria-label="Next photograph">→</button>
+  <p data-lightbox-caption></p>
+</dialog>
+
+<script>
+  const gallery = document.querySelector<HTMLElement>('[data-gallery]');
+  const dialog = document.querySelector<HTMLDialogElement>('[data-lightbox]');
+  if (gallery && dialog) {
+    const buttons = [...gallery.querySelectorAll<HTMLButtonElement>('[data-gallery-open]')];
+    const image = dialog.querySelector<HTMLImageElement>('[data-lightbox-image]');
+    const caption = dialog.querySelector<HTMLElement>('[data-lightbox-caption]');
+    let current = 0;
+
+    const show = (index: number) => {
+      current = (index + buttons.length) % buttons.length;
+      const thumbnail = buttons[current].querySelector('img');
+      if (!thumbnail || !image || !caption) return;
+      image.src = thumbnail.currentSrc || thumbnail.src;
+      image.alt = thumbnail.alt;
+      caption.textContent = buttons[current].parentElement?.querySelector('figcaption')?.textContent ?? '';
+      if (!dialog.open) dialog.showModal();
+    };
+
+    buttons.forEach((button, index) => button.addEventListener('click', () => show(index)));
+    dialog.querySelector('[data-lightbox-close]')?.addEventListener('click', () => dialog.close());
+    dialog.querySelector('[data-lightbox-previous]')?.addEventListener('click', () => show(current - 1));
+    dialog.querySelector('[data-lightbox-next]')?.addEventListener('click', () => show(current + 1));
+    dialog.addEventListener('click', (event) => { if (event.target === dialog) dialog.close(); });
+    dialog.addEventListener('keydown', (event) => {
+      if (event.key === 'ArrowLeft') show(current - 1);
+      if (event.key === 'ArrowRight') show(current + 1);
+    });
+  }
+</script>
+
+<style>
+  .gallery-button { display: block; width: 100%; padding: 0; border: 0; color: inherit; background: none; cursor: zoom-in; }
+  .gallery-button :global(img) { display: block; width: 100%; height: auto; }
+  .lightbox { width: min(96vw, 92rem); max-width: none; height: min(94vh, 64rem); max-height: none; margin: auto; padding: 3.5rem 3.5rem 2rem; border: 1px solid var(--line); border-radius: .5rem; color: var(--ink); background: #090807; }
+  .lightbox::backdrop { background: rgb(0 0 0 / .88); backdrop-filter: blur(4px); }
+  .lightbox img { display: block; width: 100%; height: calc(100% - 2rem); object-fit: contain; }
+  .lightbox p { margin: .5rem 0 0; text-align: center; color: var(--muted); }
+  .lightbox-close, .lightbox-nav { position: absolute; min-width: 2.75rem; min-height: 2.75rem; border: 1px solid var(--line); border-radius: 999px; color: var(--ink); background: rgb(17 16 15 / .9); cursor: pointer; }
+  .lightbox-close { top: .5rem; right: .5rem; padding-inline: 1rem; }
+  .lightbox-nav { top: 50%; transform: translateY(-50%); font-size: 1.5rem; }
+  .previous { left: .5rem; } .next { right: .5rem; }
+  @media (max-width: 42rem) { .lightbox { padding: 3.5rem .5rem 1rem; } }
+</style>

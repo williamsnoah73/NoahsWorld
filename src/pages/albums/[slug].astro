@@ -1,0 +1,42 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+export function getStaticPaths() {
+  const albumModules = import.meta.glob('../../content/albums/legacy/**/*.json', { eager: true });
+  const albumEntries = Object.values(albumModules).map((mod) => (mod as any).default ?? mod);
+  return albumEntries
+    .filter((entry) => entry?.privacy === 'public')
+    .map((entry) => ({ params: { slug: entry.slug } }));
+}
+
+const albumModules = import.meta.glob('../../content/albums/legacy/**/*.json', { eager: true });
+const albumEntries = Object.values(albumModules).map((mod) => (mod as any).default ?? mod);
+const { slug } = Astro.params;
+const album = albumEntries.find((entry) => entry.slug === slug && entry.privacy === 'public');
+
+if (!album) {
+  throw new Error(`Album not found for slug: ${slug}`);
+}
+---
+
+<BaseLayout title={album.title} description={album.summary || 'A photo album from Noah\'s World.'}>
+  <article class="prose">
+    <p class="eyebrow">{album.section}</p>
+    <h1>{album.title}</h1>
+    <div class="meta">
+      {album.date && <time>{new Date(album.date).toLocaleDateString('en-US', { dateStyle: 'long', timeZone: 'UTC' })}</time>}
+      <span>{album.privacy}</span>
+    </div>
+    <p class="lede">{album.summary}</p>
+    {album.images && album.images.length > 0 && (
+      <div class="gallery">
+        {album.images.map((image: any) => (
+          <figure>
+            <img src="/favicon.svg" alt={image.caption || album.title} />
+            {image.caption && <figcaption>{image.caption}</figcaption>}
+          </figure>
+        ))}
+      </div>
+    )}
+  </article>
+</BaseLayout>

@@ -1,0 +1,29 @@
+---
+import '../../src/styles/global.css';
+
+interface Props { title?: string; description?: string; }
+const { title = "Noah's World · Family", description = 'Private family stories and photographs.' } = Astro.props;
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="robots" content="noindex,nofollow,noarchive" />
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#11100f" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <title>{title}</title>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <header class="site-header">
+      <nav class="nav" aria-label="Private family navigation">
+        <a class="brand" href="/">Noah's World · Family</a>
+        <div class="nav-links"><a href="https://noahwilliams.me">Public site</a></div>
+      </nav>
+    </header>
+    <main id="main-content"><slot /></main>
+    <footer class="site-footer"><div class="shell"><span>Private family archive</span><span>Please do not share links or media.</span></div></footer>
+  </body>
+</html>

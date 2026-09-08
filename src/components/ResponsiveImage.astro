@@ -1,0 +1,27 @@
+---
+import { Image } from 'astro:assets';
+
+interface Props {
+  src: any;
+  alt: string;
+  caption?: string;
+  eager?: boolean;
+  class?: string;
+}
+
+const { src, alt, caption, eager = false, class: className } = Astro.props;
+---
+
+<figure class={className}>
+  <Image
+    src={src}
+    alt={alt}
+    widths={[480, 800, 1200, 1600]}
+    sizes="(max-width: 42rem) 100vw, (max-width: 70rem) 50vw, 33vw"
+    format="avif"
+    loading={eager ? 'eager' : 'lazy'}
+    fetchpriority={eager ? 'high' : 'auto'}
+    decoding="async"
+  />
+  {caption && <figcaption>{caption}</figcaption>}
+</figure>

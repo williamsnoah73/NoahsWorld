@@ -1,0 +1,97 @@
+{
+  "title": "welcome to the world as seen through my eyes",
+  "slug": "welcome",
+  "date": null,
+  "section": "home",
+  "summary": "8/6/10: Maui 2010 4/7/10: Sunflower Mine",
+  "body": [
+    {
+      "type": "caption",
+      "text": "What’s New:",
+      "links": []
+    },
+    {
+      "type": "paragraph",
+      "text": "8/6/10: Maui 2010 4/7/10: Sunflower Mine",
+      "links": [
+        {
+          "text": "8/6/10: Maui 2010",
+          "href": "Travel/Pages/Maui_-_July_2010.html",
+          "kind": "internal",
+          "resolved": "Travel/Pages/Maui_-_July_2010.html"
+        },
+        {
+          "text": "4/7/10: Sunflower Mine",
+          "href": "Jeep_Stuff/Pages/Sunflower_Mine_Excursion.html",
+          "kind": "internal",
+          "resolved": "Jeep_Stuff/Pages/Sunflower_Mine_Excursion.html"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "4/6/10: Jeep Pictures",
+      "links": [
+        {
+          "text": "4/6/10: Jeep Pictures",
+          "href": "Jeep_Stuff/Pages/Jeep_Upgrade.html",
+          "kind": "internal",
+          "resolved": "Jeep_Stuff/Pages/Jeep_Upgrade.html"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "4/5/10: Site Published",
+      "links": []
+    },
+    {
+      "type": "paragraph",
+      "text": "Welcome to my home on the web, and thanks for stopping by.",
+      "links": []
+    },
+    {
+      "type": "paragraph",
+      "text": "Currently the primary reason for this site is to share photos and videos of my life experiences with family and friends. That said, it wouldn’t surprise me if the site starts to take on a life of its own so come back often and check out whats new - you may just be surprised.",
+      "links": []
+    },
+    {
+      "type": "paragraph",
+      "text": "I hope you enjoy your visit - and have a great day.",
+      "links": []
+    }
+  ],
+  "images": [
+    {
+      "asset": "legacy/stories/home/welcome/001-shapeimage-1.png",
+      "caption": null,
+      "sourceFile": "Welcome_files/shapeimage_1.png",
+      "order": 1,
+      "kind": "inline"
+    },
+    {
+      "asset": "legacy/stories/home/welcome/002-shapeimage-2.png",
+      "caption": null,
+      "sourceFile": "Welcome_files/shapeimage_2.png",
+      "order": 2,
+      "kind": "inline"
+    },
+    {
+      "asset": "legacy/stories/home/welcome/003-shapeimage-3.png",
+      "caption": null,
+      "sourceFile": "Welcome_files/shapeimage_3.png",
+      "order": 3,
+      "kind": "inline"
+    },
+    {
+      "asset": "legacy/stories/home/welcome/004-shapeimage-4.png",
+      "caption": null,
+      "sourceFile": "Welcome_files/shapeimage_4.png",
+      "order": 4,
+      "kind": "inline"
+    }
+  ],
+  "privacy": "public",
+  "sourceFile": "Welcome.html",
+  "featuredImage": "legacy/stories/home/welcome/001-shapeimage-1.png"
+}

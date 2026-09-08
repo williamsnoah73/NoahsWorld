@@ -1,0 +1,53 @@
+{
+  "title": "Maui 2010 - Maui Ocean Center",
+  "slug": "maui-2010-maui-ocean-center",
+  "date": "2010-07-09",
+  "section": "travel",
+  "summary": "The Maui Ocean Center is an aquarium dedicate to the marine life of the Hawaiian Islands. The aquarium boasts a large array of interactive stations where kids and adults alike quickly learn about Hawaii’s amazing marine life. While you are wondering around don’t hesitate to ask any staff member a question about some of the creatures on display - they love to talk about their current visitors! Of course, the aquarium is one of the best ways to see the beloved sea turtle up close (assuming of course you can’t make it out snorkeling)!\n\nThe only media I have of the aquarium is video footage, which takes me a bit longer to process (i.e. cut out all the bad stuff). Stay tuned as I’ll be posting it up here as soon as possible!",
+  "body": [
+    {
+      "type": "paragraph",
+      "text": "The Maui Ocean Center is an aquarium dedicate to the marine life of the Hawaiian Islands. The aquarium boasts a large array of interactive stations where kids and adults alike quickly learn about Hawaii’s amazing marine life. While you are wondering around don’t hesitate to ask any staff member a question about some of the creatures on display - they love to talk about their current visitors! Of course, the aquarium is one of the best ways to see the beloved sea turtle up close (assuming of course you can’t make it out snorkeling)!",
+      "links": [
+        {
+          "text": "Maui Ocean Center",
+          "href": "http://www.mauioceancenter.com/",
+          "kind": "external",
+          "resolved": "http://www.mauioceancenter.com/"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "The only media I have of the aquarium is video footage, which takes me a bit longer to process (i.e. cut out all the bad stuff). Stay tuned as I’ll be posting it up here as soon as possible!",
+      "links": []
+    }
+  ],
+  "images": [
+    {
+      "asset": "legacy/albums/travel/maui-2010-maui-ocean-center/001-tr004400a.jpg",
+      "caption": null,
+      "sourceFile": "Albums/Pages/Maui_2010_-_Maui_Ocean_Center_files/Media/TR004400A/TR004400A.jpg",
+      "order": 1,
+      "kind": "gallery"
+    },
+    {
+      "asset": "legacy/albums/travel/maui-2010-maui-ocean-center/002-dv1715063a.jpg",
+      "caption": null,
+      "sourceFile": "Albums/Pages/Maui_2010_-_Maui_Ocean_Center_files/Media/dv1715063A/dv1715063A.jpg",
+      "order": 2,
+      "kind": "gallery"
+    },
+    {
+      "asset": "legacy/albums/travel/maui-2010-maui-ocean-center/003-rbhh-0053a.jpg",
+      "caption": null,
+      "sourceFile": "Albums/Pages/Maui_2010_-_Maui_Ocean_Center_files/Media/rbhh_0053A/rbhh_0053A.jpg",
+      "order": 3,
+      "kind": "gallery"
+    }
+  ],
+  "privacy": "public",
+  "sourceFile": "Albums/Pages/Maui_2010_-_Maui_Ocean_Center.html",
+  "featuredImage": "legacy/albums/travel/maui-2010-maui-ocean-center/001-tr004400a.jpg",
+  "sourceFeed": "Albums/Pages/Maui_2010_-_Maui_Ocean_Center_files/rss.xml"
+}

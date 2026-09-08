@@ -1,0 +1,32 @@
+{
+  "name": "noahs-world",
+  "type": "module",
+  "version": "1.0.0",
+  "private": true,
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro check && astro build",
+    "build:private": "astro build --config astro.private.config.mjs",
+    "check": "astro check",
+    "validate:content": "python3 scripts/validate_content.py",
+    "test": "npm run validate:content && npm run build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/sitemap": "^3.6.0",
+    "astro": "^7.3.1",
+    "sharp": "^0.34.5"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.6",
+    "typescript": "^5.9.3"
+  },
+  "allowScripts": {
+    "esbuild": true,
+    "sharp": true
+  }
+}

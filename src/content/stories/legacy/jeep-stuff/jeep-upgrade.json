@@ -1,0 +1,72 @@
+{
+  "title": "My Jeep Upgrade",
+  "slug": "jeep-upgrade",
+  "date": "2010-03-25",
+  "section": "jeep-stuff",
+  "summary": "As most of my friends know I eagerly ordered a brand new 2007 Jeep Wrangler Rubicon (4-door model) almost as soon as they were available. I’m proud to say that after almost three years I’ve finally gotten around to giving her the proper upgrades!",
+  "body": [
+    {
+      "type": "paragraph",
+      "text": "As most of my friends know I eagerly ordered a brand new 2007 Jeep Wrangler Rubicon (4-door model) almost as soon as they were available. I’m proud to say that after almost three years I’ve finally gotten around to giving her the proper upgrades!",
+      "links": []
+    },
+    {
+      "type": "list",
+      "text": "- •3” Teraflex Suspension Lift\n- •Front & Rear Teraflex SpeedBumps\n- •35x12.5” Toyo Open Country M/T Tires\n- •LoD Signature Mid-Width Front Bumper",
+      "links": []
+    },
+    {
+      "type": "list",
+      "text": "- •Teraflex Monster Front Trackbar\n- •Front-lower & Rear-upper Teraflex Flexarms\n- •17x9” Dick Cepek DC-2 Aluminum Wheels\n- •Expedition One rear bumper and TSC",
+      "links": []
+    }
+  ],
+  "images": [
+    {
+      "asset": "legacy/stories/jeep-stuff/jeep-upgrade/001-dsc-4094.jpg",
+      "caption": null,
+      "sourceFile": "Jeep_Stuff/Pages/Jeep_Upgrade_files/Media/DSC_4094/DSC_4094.jpg",
+      "order": 1,
+      "kind": "gallery"
+    },
+    {
+      "asset": "legacy/stories/jeep-stuff/jeep-upgrade/002-dsc-4095.jpg",
+      "caption": null,
+      "sourceFile": "Jeep_Stuff/Pages/Jeep_Upgrade_files/Media/DSC_4095/DSC_4095.jpg",
+      "order": 2,
+      "kind": "gallery"
+    },
+    {
+      "asset": "legacy/stories/jeep-stuff/jeep-upgrade/003-dsc-4097.jpg",
+      "caption": null,
+      "sourceFile": "Jeep_Stuff/Pages/Jeep_Upgrade_files/Media/DSC_4097/DSC_4097.jpg",
+      "order": 3,
+      "kind": "gallery"
+    },
+    {
+      "asset": "legacy/stories/jeep-stuff/jeep-upgrade/004-dsc-4089.jpg",
+      "caption": null,
+      "sourceFile": "Jeep_Stuff/Pages/Jeep_Upgrade_files/Media/DSC_4089/DSC_4089.jpg",
+      "order": 4,
+      "kind": "gallery"
+    },
+    {
+      "asset": "legacy/stories/jeep-stuff/jeep-upgrade/005-dsc-4090.jpg",
+      "caption": null,
+      "sourceFile": "Jeep_Stuff/Pages/Jeep_Upgrade_files/Media/DSC_4090/DSC_4090.jpg",
+      "order": 5,
+      "kind": "gallery"
+    },
+    {
+      "asset": "legacy/stories/jeep-stuff/jeep-upgrade/006-dsc-4093.jpg",
+      "caption": null,
+      "sourceFile": "Jeep_Stuff/Pages/Jeep_Upgrade_files/Media/DSC_4093/DSC_4093.jpg",
+      "order": 6,
+      "kind": "gallery"
+    }
+  ],
+  "privacy": "public",
+  "sourceFile": "Jeep_Stuff/Pages/Jeep_Upgrade.html",
+  "featuredImage": "legacy/stories/jeep-stuff/jeep-upgrade/001-dsc-4094.jpg",
+  "sourceFeed": "Jeep_Stuff/Pages/Jeep_Upgrade_files/rss.xml"
+}

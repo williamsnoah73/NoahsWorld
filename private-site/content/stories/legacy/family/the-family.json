@@ -1,0 +1,60 @@
+{
+  "title": "The Family",
+  "slug": "the-family",
+  "date": null,
+  "section": "family",
+  "summary": "On June 25th, 2006 my world forever changed as on this day my family was born! Okay, well born might lead you to the wrong conclusion - that was the day I married my lovely wife Mechelle and her daughter Madison. Below is a little bit of information about them both, as well as links to each of their individual pages. Now, don’t judge me too hard - but I will admit up front that there is slightly more content her about our daughter then about my wife (although I can assure you that is the way she wants it).",
+  "body": [
+    {
+      "type": "paragraph",
+      "text": "On June 25th, 2006 my world forever changed as on this day my family was born! Okay, well born might lead you to the wrong conclusion - that was the day I married my lovely wife Mechelle and her daughter Madison. Below is a little bit of information about them both, as well as links to each of their individual pages. Now, don’t judge me too hard - but I will admit up front that there is slightly more content her about our daughter then about my wife (although I can assure you that is the way she wants it).",
+      "links": []
+    },
+    {
+      "type": "paragraph",
+      "text": "Mechelle Childs",
+      "links": []
+    },
+    {
+      "type": "paragraph",
+      "text": "Mechelle grew up in Bountiful, Utah. After getting through her 20’s she moved to Phoenix, AZ were she has basically become an Arizona native! While many of our friends think one of Mechelle’s favorite past times is to give me grief, it should surprise no one that she has been (and continues to be) the life partner I never knew I needed but was always looking for. Don’t let anyone fool you, I am the lucky one in our relationship!",
+      "links": []
+    },
+    {
+      "type": "paragraph",
+      "text": "Madison Elizabeth Childs",
+      "links": [
+        {
+          "text": "Madison Elizabeth Childs",
+          "href": "Madison.html",
+          "kind": "internal",
+          "resolved": "Madison.html"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "Madison, Madison, Madison - what do I say about Madison? When I first met the little Bugger (one of her many nicknames) I was overwhelmed by how she filled my heart with joy not to mention how great her never ending hugs were! Now, over 5 years later my heart is just as full but almost more amazing is how proud she makes me everyday. There is nothing quite like coming home knowing that she has learned and done something new today!",
+      "links": []
+    }
+  ],
+  "images": [
+    {
+      "asset": "legacy/stories/family/the-family/001-shapeimage-1.png",
+      "caption": null,
+      "sourceFile": "The_Family_files/shapeimage_1.png",
+      "order": 1,
+      "kind": "inline"
+    },
+    {
+      "asset": "legacy/stories/family/the-family/002-shapeimage-2.png",
+      "caption": null,
+      "sourceFile": "The_Family_files/shapeimage_2.png",
+      "order": 2,
+      "kind": "inline"
+    }
+  ],
+  "privacy": "private",
+  "sourceFile": "The_Family.html",
+  "featuredImage": "legacy/stories/family/the-family/001-shapeimage-1.png"
+}

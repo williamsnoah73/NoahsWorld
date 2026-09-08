@@ -1,0 +1,28 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import StoryCard from '../../components/StoryCard.astro';
+
+const storyModules = import.meta.glob('../../content/stories/legacy/**/*.json', { eager: true });
+const stories = Object.values(storyModules)
+  .map((mod) => (mod as any).default ?? mod)
+  .filter((story) => story?.privacy === 'public')
+  .sort((a, b) => (b.date || '').localeCompare(a.date || ''));
+---
+
+<BaseLayout title="Journal" description="Chronological journal entries and narrative travel stories from Noah's World.">
+  <section class="section shell">
+    <p class="eyebrow">Journal</p>
+    <h1>Stories from the road, the home, and everything in between.</h1>
+    <div class="grid">
+      {stories.map((story) => (
+        <StoryCard
+          href={`/journal/${story.slug}/`}
+          title={story.title}
+          summary={story.summary || 'A story from Noah\'s World.'}
+          date={story.date}
+          section={story.section}
+        />
+      ))}
+    </div>
+  </section>
+</BaseLayout>

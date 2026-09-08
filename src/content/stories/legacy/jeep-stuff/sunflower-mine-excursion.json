@@ -1,0 +1,77 @@
+{
+  "title": "Sunflower Mine Jeep Excursion",
+  "slug": "sunflower-mine-excursion",
+  "date": "2010-04-03",
+  "section": "jeep-stuff",
+  "summary": "The Sunflower Mine trail is an off road trail in Arizona. The entrance to the trail is about midway between Phoenix and Payson off the Beeline (87) highway. The trail’s highlights are an old abandoned Mercury mine, a creek bed (which occasionally has water running through it), and lots of great camping spots.",
+  "body": [
+    {
+      "type": "paragraph",
+      "text": "The Sunflower Mine trail is an off road trail in Arizona. The entrance to the trail is about midway between Phoenix and Payson off the Beeline (87) highway. The trail’s highlights are an old abandoned Mercury mine, a creek bed (which occasionally has water running through it), and lots of great camping spots.",
+      "links": []
+    },
+    {
+      "type": "paragraph",
+      "text": "The trail is relatively easy all the way to the mine, although driving right up to the mine may require a spotter or some serious belief in your knowledge of exactly where your tires are. Not to worry, if the mine’s driveway looks like too much it is a very short walk and the mine can still be enjoyed.",
+      "links": []
+    },
+    {
+      "type": "paragraph",
+      "text": "Once you move on past the mine you are pretty much committed to the rest of the trail. That isn’t to say you can’t turn around, but it is less trouble to keep going forward than to repeat anything you have already gotten past. The creek bed is up first, and it is full of rocky tumblers that help your Jeep test just how much traction you actually have - especially when the water is running. Be careful through this area as many of these boulders will win in a fight with your Jeep’s underparts.",
+      "links": []
+    },
+    {
+      "type": "paragraph",
+      "text": "After you make it through the creek bed you will be greeted with a squeeze spot with a large (I mean large) boulder on the right and some prickly boulders on the left. Then you start to work your way out of the canyon you have been driving around in. The shale here is a bit loose so the recommendation is to keep trucking up the hill until you are out of it.",
+      "links": []
+    },
+    {
+      "type": "paragraph",
+      "text": "Once you reach the top of the canyon it is pretty easy stuff with the only remaining obstacle being a very voluntary crevice (voluntary because the main trail goes around the crevice altogether). The top of the canyon is a nice spot to take a breather and break out a cookie while you look for damage.",
+      "links": []
+    },
+    {
+      "type": "paragraph",
+      "text": "All in all Sunflower Mine trail is a fun trail of moderate difficulty that isn’t too far from Phoenix. The media on this page shows my Jeep after her upgrade, but I’ve done the run multiple times in a stock Rubicon JK without too many issues (just a lot more spotting and much more use of the lockers).",
+      "links": []
+    }
+  ],
+  "images": [
+    {
+      "asset": "legacy/stories/jeep-stuff/sunflower-mine-excursion/001-screen-shot-2010-04-05-at-9-45-06-pm.jpg",
+      "caption": null,
+      "sourceFile": "Jeep_Stuff/Pages/Sunflower_Mine_Excursion_files/Screen shot 2010-04-05 at 9.45.06 PM.jpg",
+      "order": 1,
+      "kind": "inline"
+    }
+  ],
+  "privacy": "public",
+  "sourceFile": "Jeep_Stuff/Pages/Sunflower_Mine_Excursion.html",
+  "featuredImage": "legacy/stories/jeep-stuff/sunflower-mine-excursion/001-screen-shot-2010-04-05-at-9-45-06-pm.jpg",
+  "media": [
+    {
+      "type": "video",
+      "asset": "legacy/stories/jeep-stuff/sunflower-mine-excursion/001-post-lift-1st-excursion-the-mine-mobile.mp4",
+      "poster": "legacy/stories/jeep-stuff/sunflower-mine-excursion/001-post-lift-1st-excursion-the-mine-mobile-4.jpg",
+      "caption": "The Entrance to the Mine",
+      "sourceUrl": "https://github.com/williamsnoah73/NoahsWorld/releases/download/v1.0/Post.Lift.-.1St.Excursion.-.The.Mine-Mobile.mp4",
+      "sourceFile": "Media/Post Lift - 1St Excursion - The Mine-Mobile.mp4"
+    },
+    {
+      "type": "video",
+      "asset": "legacy/stories/jeep-stuff/sunflower-mine-excursion/002-post-lift-1st-excursion-the-riverbed-medium.mp4",
+      "poster": "legacy/stories/jeep-stuff/sunflower-mine-excursion/002-post-lift-1st-excursion-the-riverbed-medium-4.jpg",
+      "caption": "The Creek bed - And the only way out",
+      "sourceUrl": "https://github.com/williamsnoah73/NoahsWorld/releases/download/v1.0/Post.Lift.-.1St.Excursion.-.The.Riverbed-Medium.mp4",
+      "sourceFile": "Media/Post Lift - 1St Excursion - The Riverbed-Medium.mp4"
+    },
+    {
+      "type": "video",
+      "asset": "legacy/stories/jeep-stuff/sunflower-mine-excursion/003-post-lift-1st-excusion-the-crevice-medium.mp4",
+      "poster": "legacy/stories/jeep-stuff/sunflower-mine-excursion/003-post-lift-1st-excusion-the-crevice-medium.jpg",
+      "caption": "The Crevice - the final obstacle",
+      "sourceUrl": "https://github.com/williamsnoah73/NoahsWorld/releases/download/v1.0/Post.Lift.-.1St.Excusion.-.The.Crevice-Medium.mp4",
+      "sourceFile": "Media/Post Lift - 1St Excusion - The Crevice-Medium.mp4"
+    }
+  ]
+}
