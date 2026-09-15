@@ -67,6 +67,13 @@ for path in required:
     if not path.is_file():
         errors.append(f'Missing required build artifact: {path.relative_to(DIST)}')
 
+redirects = DIST / '_redirects'
+expected_redirect = 'https://www.noahwilliams.me/* https://noahwilliams.me/:splat 301'
+if not redirects.is_file():
+    errors.append('Missing required build artifact: _redirects')
+elif redirects.read_text(encoding='utf-8').strip() != expected_redirect:
+    errors.append('Unexpected _redirects content; the www-only permanent redirect must be preserved')
+
 if errors:
     raise SystemExit('\n'.join(errors))
 
