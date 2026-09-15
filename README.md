@@ -66,7 +66,7 @@ Expected hosting cost is $0/month under Cloudflare's current Free limits for thi
    Until `CLOUDFLARE_DEPLOY_ENABLED` is `true`, pushes validate and build but intentionally skip deployment.
 
 5. Push `modernization` to create a branch preview; merges to `main` deploy production.
-6. After a successful `main` deployment, the workflow automatically attaches both `noahwilliams.me` and `www.noahwilliams.me` to the `noahs-world` Pages project. Existing domains in `active` or `pending` state are accepted, while unexpected API responses or domain states fail the workflow.
+6. After a successful `main` deployment, the workflow automatically attaches both `noahwilliams.me` and `www.noahwilliams.me` to the `noahs-world` Pages project. Domains in `initializing`, `pending`, or `active` state are accepted, while unexpected API responses or domain states fail the workflow.
 7. Attach `family.noahwilliams.me` to `noahs-world-family`.
 8. Create a Cloudflare Access self-hosted application covering `family.noahwilliams.me/*`. Add only approved family email addresses and enable one-time PIN or an identity provider.
 9. Verify unauthenticated requests to both private HTML pages and direct image URLs are denied.

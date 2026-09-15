@@ -11,7 +11,7 @@ function response(result, { ok = true, status = 200, errors = [] } = {}) {
   };
 }
 
-test('keeps active and pending domains without creating duplicates', async () => {
+test('keeps active and initializing domains without creating duplicates', async () => {
   const calls = [];
   const client = createCloudflareClient({
     accountId: 'account',
@@ -20,7 +20,7 @@ test('keeps active and pending domains without creating duplicates', async () =>
       calls.push({ url, options });
       return response([
         { name: 'noahwilliams.me', status: 'active' },
-        { name: 'www.noahwilliams.me', status: 'pending' },
+        { name: 'www.noahwilliams.me', status: 'initializing' },
       ]);
     },
   });
@@ -46,7 +46,7 @@ test('creates each missing domain with the expected API payload', async () => {
       }
       const { name } = JSON.parse(options.body);
       createdNames.push(name);
-      return response({ name, status: 'pending' });
+      return response({ name, status: 'initializing' });
     },
   });
 
