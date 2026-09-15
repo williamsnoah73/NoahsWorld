@@ -1,0 +1,102 @@
+{
+  "title": "Noah & Mechelle’s Wedding Photos",
+  "slug": "wedding",
+  "date": "2006-06-25",
+  "section": "wedding",
+  "summary": "My lovely wife Mechelle and I were married at the Carneros Inn in Napa, CA on June 25th, 2006.\n\nWe were honored by all the family and friends who came to Napa to participate in our wedding. Napa of course provided the perfect setting, and the Carneros Inn is one of our favorite spots to stay whenever we visit Napa. I can honestly say that these were the best days of my life.",
+  "body": [
+    {
+      "type": "paragraph",
+      "text": "My lovely wife Mechelle and I were married at the Carneros Inn in Napa, CA on June 25th, 2006.",
+      "links": [
+        {
+          "text": "Carneros Inn",
+          "href": "http://www.thecarnerosinn.com/",
+          "kind": "external",
+          "resolved": "http://www.thecarnerosinn.com/"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "We were honored by all the family and friends who came to Napa to participate in our wedding. Napa of course provided the perfect setting, and the Carneros Inn is one of our favorite spots to stay whenever we visit Napa. I can honestly say that these were the best days of my life.",
+      "links": [
+        {
+          "text": "Carneros Inn",
+          "href": "http://www.thecarnerosinn.com/",
+          "kind": "external",
+          "resolved": "http://www.thecarnerosinn.com/"
+        }
+      ]
+    }
+  ],
+  "images": [
+    {
+      "asset": "legacy/stories/wedding/wedding/001-wedding-reception-038.jpg",
+      "caption": "Napa Vineyards",
+      "sourceFile": "The_Wedding/Pages/Wedding_files/Media/Wedding Reception  038/Wedding Reception  038.jpg",
+      "order": 1,
+      "kind": "gallery"
+    },
+    {
+      "asset": "legacy/stories/wedding/wedding/002-childs-williams-wedding-307.jpg",
+      "caption": "Napa Sunset",
+      "sourceFile": "The_Wedding/Pages/Wedding_files/Media/Childs-Williams Wedding  307/Childs-Williams Wedding  307.jpg",
+      "order": 2,
+      "kind": "gallery"
+    },
+    {
+      "asset": "legacy/stories/wedding/wedding/003-childs-williams-wedding-231.jpg",
+      "caption": "Standing Ready",
+      "sourceFile": "The_Wedding/Pages/Wedding_files/Media/Childs-Williams Wedding  231/Childs-Williams Wedding  231.jpg",
+      "order": 3,
+      "kind": "gallery"
+    },
+    {
+      "asset": "legacy/stories/wedding/wedding/004-childs-williams-wedding-188.jpg",
+      "caption": "Princess Madison",
+      "sourceFile": "The_Wedding/Pages/Wedding_files/Media/Childs-Williams Wedding  188/Childs-Williams Wedding  188.jpg",
+      "order": 4,
+      "kind": "gallery"
+    },
+    {
+      "asset": "legacy/stories/wedding/wedding/005-childs-williams-wedding-212.jpg",
+      "caption": "Two Peas in a Pod",
+      "sourceFile": "The_Wedding/Pages/Wedding_files/Media/Childs-Williams Wedding  212/Childs-Williams Wedding  212.jpg",
+      "order": 5,
+      "kind": "gallery"
+    },
+    {
+      "asset": "legacy/stories/wedding/wedding/006-childs-williams-wedding-256.jpg",
+      "caption": "Our New Family",
+      "sourceFile": "The_Wedding/Pages/Wedding_files/Media/Childs-Williams Wedding  256/Childs-Williams Wedding  256.jpg",
+      "order": 6,
+      "kind": "gallery"
+    },
+    {
+      "asset": "legacy/stories/wedding/wedding/007-wedding-group-shots-124.jpg",
+      "caption": "Boys Keeping Me Focused",
+      "sourceFile": "The_Wedding/Pages/Wedding_files/Media/Wedding Group Shots  124/Wedding Group Shots  124.jpg",
+      "order": 7,
+      "kind": "gallery"
+    },
+    {
+      "asset": "legacy/stories/wedding/wedding/008-wedding-group-shots-027.jpg",
+      "caption": "Mom & Dad",
+      "sourceFile": "The_Wedding/Pages/Wedding_files/Media/Wedding Group Shots  027/Wedding Group Shots  027.jpg",
+      "order": 8,
+      "kind": "gallery"
+    },
+    {
+      "asset": "legacy/stories/wedding/wedding/009-wedding-cermony-080.jpg",
+      "caption": "The Happy Couple",
+      "sourceFile": "The_Wedding/Pages/Wedding_files/Media/Wedding Cermony  080/Wedding Cermony  080.jpg",
+      "order": 9,
+      "kind": "gallery"
+    }
+  ],
+  "privacy": "public",
+  "sourceFile": "The_Wedding/Pages/Wedding.html",
+  "featuredImage": "legacy/stories/wedding/wedding/001-wedding-reception-038.jpg",
+  "sourceFeed": "The_Wedding/Pages/Wedding_files/rss.xml"
+}

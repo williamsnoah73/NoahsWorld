@@ -1,0 +1,45 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import StoryCard from '../components/StoryCard.astro';
+import { resolvePublicImage } from '../lib/media';
+
+const storyModules = import.meta.glob('../content/stories/legacy/**/*.json', { eager: true });
+const stories = Object.values(storyModules)
+  .map((mod) => (mod as any).default ?? mod)
+  .filter((story) => story?.privacy === 'public')
+  .sort((a, b) => (a.title || '').localeCompare(b.title || ''))
+  .slice(0, 4);
+---
+
+<BaseLayout title="Noah's World" description="A modernized personal journal, travel stories, photo albums, and family memory archive.">
+  <section class="hero shell">
+    <div>
+      <p class="eyebrow">A life in stories and photographs</p>
+      <h1>The world as seen through my eyes.</h1>
+      <p class="lede">This site preserves the warmth of the original 2010 journal while making it easier to read, browse, and revisit on any device.</p>
+      <p><a class="button" href="/journal/">Browse the journal</a> <a class="button" href="/albums/">See the albums</a></p>
+    </div>
+  </section>
+
+  <section class="section shell">
+    <div class="section-head">
+      <div>
+        <p class="eyebrow">Featured stories</p>
+        <h2>Recent highlights</h2>
+      </div>
+      <a href="/journal/">View archive</a>
+    </div>
+    <div class="grid">
+      {stories.map((story) => (
+        <StoryCard
+          href={`/journal/${story.slug}/`}
+          title={story.title}
+          summary={story.summary || 'A story from Noah\'s World.'}
+          date={story.date}
+          section={story.section}
+          image={resolvePublicImage(story.featuredImage)}
+        />
+      ))}
+    </div>
+  </section>
+</BaseLayout>

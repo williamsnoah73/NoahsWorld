@@ -1,0 +1,59 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ContentBody from '../../components/ContentBody.astro';
+import Gallery from '../../components/Gallery.astro';
+import VideoPlayer from '../../components/VideoPlayer.astro';
+import { resolvePublicImage } from '../../lib/media';
+
+export function getStaticPaths() {
+  const storyModules = import.meta.glob('../../content/stories/legacy/**/*.json', { eager: true });
+  const storyEntries = Object.values(storyModules).map((mod) => (mod as any).default ?? mod);
+  return storyEntries
+    .filter((entry) => entry?.privacy === 'public')
+    .map((entry) => ({ params: { slug: entry.slug } }));
+}
+
+const storyModules = import.meta.glob('../../content/stories/legacy/**/*.json', { eager: true });
+const storyEntries = Object.values(storyModules).map((mod) => (mod as any).default ?? mod);
+const { slug } = Astro.params;
+const story = storyEntries.find((entry) => entry.slug === slug && entry.privacy === 'public');
+
+if (!story) {
+  throw new Error(`Story not found for slug: ${slug}`);
+}
+
+const galleryImages = (story.images ?? []).map((image: any, index: number) => ({
+  src: resolvePublicImage(image.asset),
+  alt: image.caption || `${story.title}, photograph ${index + 1} of ${story.images.length}`,
+  caption: image.caption,
+}));
+const videos = (story.media ?? [])
+  .filter((item: any) => item.type === 'video')
+  .map((item: any) => ({
+    ...item,
+    posterImage: resolvePublicImage(item.poster),
+  }));
+---
+
+<BaseLayout title={story.title} description={story.summary || 'A story from Noah\'s World.'} image={resolvePublicImage(story.featuredImage)?.src}>
+  <article class="prose">
+    <p class="eyebrow">{story.section}</p>
+    <h1>{story.title}</h1>
+    <div class="meta">
+      {story.date && <time>{new Date(story.date).toLocaleDateString('en-US', { dateStyle: 'long', timeZone: 'UTC' })}</time>}
+      <span>{story.privacy}</span>
+    </div>
+    <p class="lede">{story.summary}</p>
+    <ContentBody blocks={story.body} summary={story.summary} />
+    {videos.map((video: any) => (
+      <VideoPlayer
+        src={video.sourceUrl}
+        poster={video.posterImage}
+        title={video.caption || story.title}
+        caption={video.caption}
+        width={video.width}
+      />
+    ))}
+  </article>
+  {galleryImages.length > 0 && <Gallery images={galleryImages} />}
+</BaseLayout>

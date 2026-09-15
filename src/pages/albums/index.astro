@@ -1,0 +1,30 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import StoryCard from '../../components/StoryCard.astro';
+import { resolvePublicImage } from '../../lib/media';
+
+const albumModules = import.meta.glob('../../content/albums/legacy/**/*.json', { eager: true });
+const albums = Object.values(albumModules)
+  .map((mod) => (mod as any).default ?? mod)
+  .filter((album) => album?.privacy === 'public')
+  .sort((a, b) => (b.date || '').localeCompare(a.date || ''));
+---
+
+<BaseLayout title="Albums" description="Photo albums from Noah's World, preserving travels, family memories, and special moments.">
+  <section class="section shell">
+    <p class="eyebrow">Albums</p>
+    <h1>Photo essays and travel albums.</h1>
+    <div class="grid">
+      {albums.map((album) => (
+        <StoryCard
+          href={`/albums/${album.slug}/`}
+          title={album.title}
+          summary={album.summary || 'A photo story from Noah\'s World.'}
+          date={album.date}
+          section={album.section}
+          image={resolvePublicImage(album.featuredImage)}
+        />
+      ))}
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,32 @@
+---
+import { Picture } from 'astro:assets';
+
+interface Props {
+  src: string;
+  poster?: any;
+  title: string;
+  caption?: string;
+  width: number;
+}
+
+const { src, poster, title, caption, width } = Astro.props;
+---
+
+<figure class="video-frame">
+  <video controls preload="metadata" playsinline poster={poster?.src} aria-label={title} style={`--video-native-width: ${width}px`}>
+    <source src={src} type="video/mp4" />
+    <p>Your browser cannot play this video. <a href={src}>Download the MP4 file</a>.</p>
+  </video>
+  {caption && <figcaption>{caption}</figcaption>}
+  {poster && (
+    <noscript>
+      <Picture src={poster} alt={`${title} poster`} formats={['avif', 'webp']} widths={[640, 960]} />
+    </noscript>
+  )}
+</figure>
+
+<style>
+  .video-frame { margin: 2rem 0; border: 1px solid var(--line); background: var(--panel); padding: .5rem; }
+  video { display: block; width: 100%; max-width: var(--video-native-width); max-height: 80vh; margin-inline: auto; background: #000; }
+  figcaption { padding: .75rem .5rem .25rem; color: var(--muted); }
+</style>

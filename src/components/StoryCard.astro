@@ -1,0 +1,30 @@
+---
+import ResponsiveImage from './ResponsiveImage.astro';
+
+interface Props {
+  href: string;
+  title: string;
+  summary: string;
+  date?: string | Date | null;
+  section: string;
+  image?: any;
+}
+
+const { href, title, summary, date, section, image } = Astro.props;
+const formattedDate = date ? new Intl.DateTimeFormat('en-US', { dateStyle: 'long', timeZone: 'UTC' }).format(new Date(date)) : null;
+---
+
+<article class="card">
+  <a class="card-link" href={href}>
+    {image ? (
+      <div class="card-media"><ResponsiveImage src={image} alt="" /></div>
+    ) : (
+      <div class="card-media empty-media">A story from Noah's World</div>
+    )}
+    <div class="card-body">
+      <div class="meta"><span>{section}</span>{formattedDate && <time>{formattedDate}</time>}</div>
+      <h3>{title}</h3>
+      <p>{summary}</p>
+    </div>
+  </a>
+</article>

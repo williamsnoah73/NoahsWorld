@@ -1,0 +1,62 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+  image?: string;
+  noindex?: boolean;
+}
+
+const {
+  title = "Noah's World",
+  description = 'Stories, travels, photographs, and memories from a life well lived.',
+  image = '/social-card.svg',
+  noindex = false,
+} = Astro.props;
+const pageTitle = title === "Noah's World" ? title : `${title} · Noah's World`;
+const canonical = new URL(Astro.url.pathname, Astro.site);
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#11100f" />
+    {noindex && <meta name="robots" content="noindex,nofollow" />}
+    <link rel="canonical" href={canonical} />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="alternate" type="application/rss+xml" title="Noah's World journal" href="/rss.xml" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={new URL(image, Astro.site)} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <title>{pageTitle}</title>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <header class="site-header">
+      <nav class="nav" aria-label="Primary navigation">
+        <a class="brand" href="/">Noah's World</a>
+        <div class="nav-links">
+          <a href="/journal/" aria-current={Astro.url.pathname.startsWith('/journal') ? 'page' : undefined}>Journal</a>
+          <a href="/albums/" aria-current={Astro.url.pathname.startsWith('/albums') ? 'page' : undefined}>Albums</a>
+          <a href="/about/" aria-current={Astro.url.pathname === '/about/' ? 'page' : undefined}>About</a>
+          <a href="https://family.noahwilliams.me">Family albums</a>
+        </div>
+      </nav>
+    </header>
+    <main id="main-content"><slot /></main>
+    <footer class="site-footer">
+      <div class="shell">
+        <span>© {new Date().getFullYear()} Noah Williams</span>
+        <span>The world as seen through my eyes.</span>
+      </div>
+    </footer>
+  </body>
+</html>

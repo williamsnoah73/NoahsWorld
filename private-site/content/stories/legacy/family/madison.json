@@ -1,0 +1,62 @@
+{
+  "title": "Madison’s World",
+  "slug": "madison",
+  "date": null,
+  "section": "family",
+  "summary": "This page is dedicated to our daughter Madison, below you will find links to various picture and video albums showcasing her amazing smile and spirit!",
+  "body": [
+    {
+      "type": "paragraph",
+      "text": "This page is dedicated to our daughter Madison, below you will find links to various picture and video albums showcasing her amazing smile and spirit!",
+      "links": []
+    },
+    {
+      "type": "paragraph",
+      "text": "Thank you Madison for providing all of us with such great fun!",
+      "links": []
+    },
+    {
+      "type": "paragraph",
+      "text": "(Coming Soon)",
+      "links": []
+    },
+    {
+      "type": "caption",
+      "text": "The links on this page are password protected for Madison’s safety, please contact me if you don’t have the password.",
+      "links": []
+    }
+  ],
+  "images": [
+    {
+      "asset": "legacy/stories/family/madison/001-shapeimage-1.png",
+      "caption": null,
+      "sourceFile": "Madison_files/shapeimage_1.png",
+      "order": 1,
+      "kind": "inline"
+    },
+    {
+      "asset": "legacy/stories/family/madison/002-shapeimage-2.png",
+      "caption": null,
+      "sourceFile": "Madison_files/shapeimage_2.png",
+      "order": 2,
+      "kind": "inline"
+    },
+    {
+      "asset": "legacy/stories/family/madison/003-shapeimage-3.png",
+      "caption": null,
+      "sourceFile": "Madison_files/shapeimage_3.png",
+      "order": 3,
+      "kind": "inline"
+    },
+    {
+      "asset": "legacy/stories/family/madison/004-shapeimage-4.png",
+      "caption": null,
+      "sourceFile": "Madison_files/shapeimage_4.png",
+      "order": 4,
+      "kind": "inline"
+    }
+  ],
+  "privacy": "private",
+  "sourceFile": "Madison.html",
+  "featuredImage": "legacy/stories/family/madison/001-shapeimage-1.png"
+}
