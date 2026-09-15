@@ -51,6 +51,7 @@ const videos = (story.media ?? [])
         poster={video.posterImage}
         title={video.caption || story.title}
         caption={video.caption}
+        width={video.width}
       />
     ))}
   </article>

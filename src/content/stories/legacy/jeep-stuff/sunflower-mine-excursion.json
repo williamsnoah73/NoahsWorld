@@ -54,6 +54,7 @@
       "asset": "legacy/stories/jeep-stuff/sunflower-mine-excursion/001-post-lift-1st-excursion-the-mine-mobile.mp4",
       "poster": "legacy/stories/jeep-stuff/sunflower-mine-excursion/001-post-lift-1st-excursion-the-mine-mobile-4.jpg",
       "caption": "The Entrance to the Mine",
+      "width": 480,
       "sourceUrl": "https://github.com/williamsnoah73/NoahsWorld/releases/download/v1.0/Post.Lift.-.1St.Excursion.-.The.Mine-Mobile.mp4",
       "sourceFile": "Media/Post Lift - 1St Excursion - The Mine-Mobile.mp4"
     },
@@ -62,6 +63,7 @@
       "asset": "legacy/stories/jeep-stuff/sunflower-mine-excursion/002-post-lift-1st-excursion-the-riverbed-medium.mp4",
       "poster": "legacy/stories/jeep-stuff/sunflower-mine-excursion/002-post-lift-1st-excursion-the-riverbed-medium-4.jpg",
       "caption": "The Creek bed - And the only way out",
+      "width": 640,
       "sourceUrl": "https://github.com/williamsnoah73/NoahsWorld/releases/download/v1.0/Post.Lift.-.1St.Excursion.-.The.Riverbed-Medium.mp4",
       "sourceFile": "Media/Post Lift - 1St Excursion - The Riverbed-Medium.mp4"
     },
@@ -70,6 +72,7 @@
       "asset": "legacy/stories/jeep-stuff/sunflower-mine-excursion/003-post-lift-1st-excusion-the-crevice-medium.mp4",
       "poster": "legacy/stories/jeep-stuff/sunflower-mine-excursion/003-post-lift-1st-excusion-the-crevice-medium.jpg",
       "caption": "The Crevice - the final obstacle",
+      "width": 640,
       "sourceUrl": "https://github.com/williamsnoah73/NoahsWorld/releases/download/v1.0/Post.Lift.-.1St.Excusion.-.The.Crevice-Medium.mp4",
       "sourceFile": "Media/Post Lift - 1St Excusion - The Crevice-Medium.mp4"
     }
