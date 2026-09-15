@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 const API_BASE = 'https://api.cloudflare.com/client/v4';
-const ACCEPTED_STATUSES = new Set(['active', 'pending']);
+const ACCEPTED_STATUSES = new Set(['active', 'pending', 'initializing']);
 
 function describeErrors(payload) {
   const errors = Array.isArray(payload?.errors) ? payload.errors : [];
