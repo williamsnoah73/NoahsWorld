@@ -66,17 +66,17 @@ Expected hosting cost is $0/month under Cloudflare's current Free limits for thi
    Until `CLOUDFLARE_DEPLOY_ENABLED` is `true`, pushes validate and build but intentionally skip deployment.
 
 5. Push `modernization` to create a branch preview; merges to `main` deploy production.
-6. Attach `noahwilliams.me` to `noahs-world` only after preview approval.
+6. After a successful `main` deployment, the workflow automatically attaches both `noahwilliams.me` and `www.noahwilliams.me` to the `noahs-world` Pages project. Existing domains in `active` or `pending` state are accepted, while unexpected API responses or domain states fail the workflow.
 7. Attach `family.noahwilliams.me` to `noahs-world-family`.
 8. Create a Cloudflare Access self-hosted application covering `family.noahwilliams.me/*`. Add only approved family email addresses and enable one-time PIN or an identity provider.
 9. Verify unauthenticated requests to both private HTML pages and direct image URLs are denied.
-10. Optionally redirect `www.noahwilliams.me` to the apex. Do not change `noahwilliams.com` or `noahwilliams.net`.
+10. The deployed `_redirects` file permanently redirects only `www.noahwilliams.me/*` to `https://noahwilliams.me/:splat`, preserving the path and Cloudflare's default query-string forwarding; the apex and `pages.dev` preview hosts are unaffected. Do not change `noahwilliams.com` or `noahwilliams.net`.
 
 The public workflow validates pull requests and pushes to `main` or `modernization`; deployment remains gated by `CLOUDFLARE_DEPLOY_ENABLED`. The private workflow uses a protected GitHub environment named `private-family-site`; configure required reviewers if desired.
 
 ## DNS cutover
 
-Before changing DNS, export the current records. The existing `noahwilliams.me` endpoint currently presents a mismatched TLS certificate, so verify the new Pages certificate is active before enabling HSTS. Keep GitHub Pages available until the Cloudflare deployment has passed external smoke tests.
+Before changing DNS, export the current records. Attaching the custom domains starts Cloudflare's DNS verification and certificate issuance, which can remain pending while records and certificates propagate. This automation prepares the cutover but does not mean the domain is live. After the production workflow completes, wait for both domains to report `active`, then verify HTTPS and the `www` redirect externally before enabling HSTS or retiring the previous hosting.
 
 ## Publishing
 
