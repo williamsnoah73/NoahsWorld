@@ -53,7 +53,7 @@ export function createCloudflareClient({ accountId, apiToken, fetchImpl = fetch 
 
   return {
     async listDomains() {
-      const result = await request('GET', `${projectPath}?per_page=100`);
+      const result = await request('GET', projectPath);
       if (!Array.isArray(result)) {
         throw new Error('Cloudflare API returned an invalid custom-domain list');
       }
