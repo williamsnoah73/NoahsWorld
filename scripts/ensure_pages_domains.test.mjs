@@ -28,6 +28,10 @@ test('keeps active and pending domains without creating duplicates', async () =>
   await ensurePagesDomains(client, ['noahwilliams.me', 'www.noahwilliams.me'], () => {});
 
   assert.equal(calls.length, 1);
+  assert.equal(
+    calls[0].url,
+    'https://api.cloudflare.com/client/v4/accounts/account/pages/projects/noahs-world/domains',
+  );
   assert.equal(calls[0].options.method, 'GET');
 });
 
